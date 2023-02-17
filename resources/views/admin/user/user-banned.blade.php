@@ -31,7 +31,29 @@
                 <td>{{$value->phone}}</td>
                 <td>{{$value->address}}</td>
                 <td>
-                    <a href="/users-restore/{{$value->slug}}" class="btn btn-secondary me-3">Restore</a>
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    Restore
+                    </button>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="exampleModalLabel">Ban User</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            Are u sure to restore the user?
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <a href="/users-restore/{{$value->slug}}" class="btn btn-primary me-3">Restore</a>
+                        </div>
+                        </div>
+                    </div>
+                    </div>
                 </td>
             </tr>
             @endforeach

@@ -50,7 +50,7 @@ Route::middleware('auth')->group(function(){
     Route::post('books-add', [AdminController::class, 'booksStore']);
     Route::get('books-edit/{slug}', [AdminController::class, 'booksEdit']);
     Route::put('books-edit/{slug}', [AdminController::class, 'booksUpdate']);
-    Route::get('books-delete/{slug}', [AdminController::class, 'booksDestroy']);
+    Route::get('/books-delete/{slug}', [AdminController::class, 'booksDestroy']);
     Route::get('rentlogs',[AdminController::class, 'rent'])->middleware('only_admin');
     Route::get('logout', [AuthController::class, 'logout']);
 });

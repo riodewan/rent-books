@@ -33,7 +33,29 @@
                 <td>{{$value->address}}</td>
                 <td>
                     <a href="/users-detail/{{$value->slug}}" class="btn btn-secondary me-3">Detail</a>
-                    <a href="/users-ban/{{$value->slug}}" class="btn btn-danger">Ban User</a>
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    Ban User
+                    </button>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="exampleModalLabel">Ban User</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            Are u sure to ban the user?
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <a href="/users-ban/{{$value->slug}}" class="btn btn-danger">Ban</a>
+                        </div>
+                        </div>
+                    </div>
+                    </div>
                 </td>
             </tr>
             @endforeach
