@@ -13,7 +13,7 @@
         {{ session('status') }}
     </div>
 @endif
-    <div class="mt-5" style="overflow-x:auto;">
+    <div class="ms-5" style="overflow-x:auto;">
         <table class="table">
             <thead>
                 <tr>

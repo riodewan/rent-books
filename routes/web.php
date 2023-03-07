@@ -3,6 +3,7 @@
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\RentLogsController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -51,7 +52,13 @@ Route::middleware('auth')->group(function(){
     Route::get('books-edit/{slug}', [AdminController::class, 'booksEdit']);
     Route::put('books-edit/{slug}', [AdminController::class, 'booksUpdate']);
     Route::get('/books-delete/{slug}', [AdminController::class, 'booksDestroy']);
+    // Route Book Halaman User
+    Route::get('book-user', [UserController::class, 'book']);
     Route::get('rentlogs',[AdminController::class, 'rent'])->middleware('only_admin');
+    Route::get('rentlogs-add', [RentLogsController::class, 'add']);
+    Route::post('rentlogs-add', [RentLogsController::class, 'store']);
+    Route::get('returnlogs', [RentLogsController::class, 'edit']);
+    Route::post('returnlogs', [RentLogsController::class, 'update']);
     Route::get('logout', [AuthController::class, 'logout']);
 });
 

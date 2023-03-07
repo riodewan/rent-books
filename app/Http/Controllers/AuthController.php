@@ -22,9 +22,7 @@ class AuthController extends Controller
             'password' => ['required'],
         ]);
 
-        //Buat cek si user udah login
         if (Auth::attempt($credentials)){
-            //BUAT CEK STATUS USER ACTIVE ATAU BUKAN
             if(Auth::user()->status != 'active')
             {
                 Auth::logout();

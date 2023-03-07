@@ -11,7 +11,6 @@
         <button type="button" class="btn btn-secondary me-3" data-bs-toggle="modal" data-bs-target="#exampleModal">
             Approve User
         </button>
-
     <!-- Modal -->
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
@@ -29,7 +28,8 @@
                     </div>
                 </div>
              </div>
-       </div>     
+       </div>   
+         
     <a href="/users-registered" class="btn btn-primary">Back</a>
     @else
     <a href="/users" class="btn btn-primary">Back</a>
@@ -37,6 +37,7 @@
 </div>
 
 @if(session('status'))
+
     <div class="alert alert-success mt-3">
         {{ session('status') }}
     </div>
@@ -59,4 +60,5 @@
         <input type="text" class="form-control" readonly value="{{$user->status}}">
     </div>
 </div>
+
 @endsection

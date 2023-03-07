@@ -15,6 +15,8 @@
 
     .sidebar{
         background-color: #86A3B8;
+        overflow-x: hidden;
+        
     }
 
     .content{
@@ -26,6 +28,7 @@
         padding: 20px 30px;
         color: #fff;
         display: block;
+        
     }
 
     .sidebar a:hover{
@@ -113,6 +116,7 @@
             <a href="/logout"><i class="bi bi-box-arrow-left p-1"></i>Logout</a>
             @else
             <a href="/profile" @if(request()->route()->uri == 'profile') class= 'active' @endif><i class="bi bi-person-lock p-1"></i>Profile</a>
+            <a href="/book-user" @if(request()->route()->uri == 'book-user') class= 'active' @endif><i class="bi bi-book p-1"></i>Books</a>
             <a href="/logout"><i class="bi bi-box-arrow-left p-1"></i>Logout</a>
             @endif
         </div>
